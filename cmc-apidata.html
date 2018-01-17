@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
-<body>
-  <table>
-    <tr>
-      <th>Total Crypto Marketcap</th>
-    </tr>
-    <td>
-    <?php
-   $url = 'https://api.coinmarketcap.com/v1/global/'; 
-  $data = file_get_contents($url); 
-  $price = json_decode($data,true); 
-
-  //var_dump($price);
-  echo $price["total_market_cap_usd"];
-?>
-    </td>
-  </table>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<table>
+  <tr>
+    <th>Coin Price</th>
+  </tr>
+  <tr>
+    <td id="my_cell"></td>
+  </tr>
+</table>
+  
+    <script>
+  $.get("https://api.coinmarketcap.com/v1/ticker/", function(data, status) {
+    var asString = JSON.stringify(data, null, 2);
+    var asHtml = asString.replace(/\n/gi, '<br />');
+    
+      $("#my_cell").html(asHtml);
+});
+    </script>
 </body>
 </html>
