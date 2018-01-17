@@ -1,20 +1,20 @@
-function getJSONP(url, success) {
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>Coin Price</th>
+    </tr>
+    <td id="my_cell"></td>
+  </table>
 
-    var ud = '_' + +new Date,
-        script = document.createElement('script'),
-        head = document.getElementsByTagName('head')[0] 
-               || document.documentElement;
-
-    window[ud] = function(data) {
-        head.removeChild(script);
-        success && success(data);
-    };
-
-    script.src = url.replace('callback=?', 'callback=' + ud);
-    head.appendChild(script);
-
-}
-
-getJSONP('https://api.coinmarketcap.com/v1/global/', function(data){
-    console.log(obj.total_market_cap_usd);
-});
+  <script>
+    $.get("https://api.coinmarketcap.com/v1/global/", function(data, status) {                  
+          $("#my_cell").innerHTML = data[i].price_usd;                    
+    }    
+  </script>
+</body>
+</html>
