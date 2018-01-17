@@ -8,13 +8,25 @@
     <tr>
       <th>Total Crypto Marketcap</th>
     </tr>
-    <td id="my_cell"></td>
+    <td>
+    <?php
+   $url = 'https://api.coinmarketcap.com/v1/global/'; 
+  $data = file_get_contents($url); 
+  $price = json_decode($data,true); 
+
+  //var_dump($price);
+  echo $price["total_market_cap_usd"];
+?>
+    </td>
   </table>
 
-  <script>
-    $.get("https://api.coinmarketcap.com/v1/ticker/", function(data, status) {
-          $("#my_cell").html(data.total_market_cap_usd);
-});
-  </script>
+  <?php
+   $url = 'https://api.coinmarketcap.com/v1/global/'; 
+  $data = file_get_contents($url); 
+  $price = json_decode($data,true); 
+
+  //var_dump($price);
+  echo $price["total_market_cap_usd"];
+?>
 </body>
 </html>
