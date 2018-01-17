@@ -19,14 +19,5 @@
 ?>
     </td>
   </table>
-
-  <?php
-   $url = 'https://api.coinmarketcap.com/v1/global/'; 
-  $data = file_get_contents($url); 
-  $price = json_decode($data,true); 
-
-  //var_dump($price);
-  echo $price["total_market_cap_usd"];
-?>
 </body>
 </html>
