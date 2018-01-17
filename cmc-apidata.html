@@ -4,9 +4,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <table>
   <tr>
-    <th>Coin Price</th>
-  </tr>
-  <tr>
     <td id="my_cell"></td>
   </tr>
 </table>
@@ -14,8 +11,7 @@
     <script>
   $.get("https://api.coinmarketcap.com/v1/global/", function(data, status) {
     data["response_type"] = 'in_channel';
-    var asString = JSON.stringify(data);
-      $("#my_cell").html(asString);
+      $("#my_cell").html(data);
 });
     </script>
 </body>
