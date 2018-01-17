@@ -6,14 +6,14 @@
 <body>
   <table>
     <tr>
-      <th>Coin Price</th>
+      <th>Total Crypto Marketcap</th>
     </tr>
     <td id="my_cell"></td>
   </table>
 
   <script>
     $.get("https://api.coinmarketcap.com/v1/global/", function(data, status) {                  
-          $("#my_cell").innerHTML = data[0].total_market_cap_usd;                    
+          $("#my_cell").innerHTML = data.total_market_cap_usd;                    
     }    
   </script>
 </body>
