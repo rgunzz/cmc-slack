@@ -16,6 +16,5 @@ function getJSONP(url, success) {
 }
 
 getJSONP('https://api.coinmarketcap.com/v1/global/', function(data){
-    var par = JSON.parse(data);
-    console.log(par);
+    console.log(obj.total_market_cap_usd);
 });
