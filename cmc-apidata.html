@@ -12,9 +12,9 @@
   </table>
 
   <script>
-    $.get("https://api.coinmarketcap.com/v1/global/", function(data, status) {                  
-          $("#my_cell").innerHTML = data.total_market_cap_usd;                    
-    }    
+    $.get("https://api.coinmarketcap.com/v1/ticker/", function(data, status) {
+          $("#my_cell").html(data[0].total_market_cap_usd);
+});
   </script>
 </body>
 </html>
