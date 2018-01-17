@@ -11,7 +11,7 @@
     <script>
   $.get("https://api.coinmarketcap.com/v1/global/", function(data, status) {
     data["response_type"] = 'in_channel';
-    var asString = JSON.stringify(json, null, 2);
+    var asString = JSON.stringify(data, null, 2);
       $("#my_cell").html(asString);
 });
     </script>
